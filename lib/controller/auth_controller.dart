@@ -15,7 +15,7 @@ class AuthController extends GetxController {
       //  The sign-in process should be simulated with a 3-second delay,
      
       await Future.delayed(Duration(seconds: 3)).then((v) {
-        if (email == 'test@example.com' && password == '1234') {
+        if (email == 'david@kodecamp.com' && password == '01234567') {
           user.value = UserModel(email: email);
           Get.snackbar(
             '',
@@ -26,10 +26,10 @@ class AuthController extends GetxController {
           completer.complete("Succesfully Signed In");
         } else if (email == '' || password == '') {
           completer.completeError("Enter your email and password");
-        } else if (email != 'test@example.com') {
+        } else if (email != 'david@kodecamp.com') {
           completer.completeError('No account found');
           throw "No Profile found, contact the Admin";
-        } else if (password != '1234') {
+        } else if (password != '01234567') {
           completer.completeError('Wrong Password.');
           throw "Incorrect Password";
         } else {

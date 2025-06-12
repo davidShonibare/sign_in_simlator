@@ -60,6 +60,8 @@ class Login extends StatelessWidget {
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Enter your password!';
+                    } else if (value.length < 8) {
+                      return 'Password should be atleast 8 characters';
                     }
                     return null;
                   },
@@ -79,10 +81,9 @@ class Login extends StatelessWidget {
                                 passwordController.text.trim(),
                               )
                               .then((_) {
-                               Get.offAllNamed('/home');
+                                Get.offAllNamed('/home');
                               })
-                              .catchError((e) {
-                               });
+                              .catchError((e) {});
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -105,8 +106,7 @@ class Login extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                ],
+              ],
             ),
           ),
         ),
