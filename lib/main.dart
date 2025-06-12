@@ -12,6 +12,7 @@ class MyApp2 extends StatelessWidget {
       title: 'Sign In Simulator',
       initialRoute: '/',
       getPages: [
+        GetPage(name: '/', page: () => Login()),
         GetPage(name: '/home', page: () => HomePage()),
       ],
     );
