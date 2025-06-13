@@ -22,6 +22,7 @@ class AuthController extends GetxController {
             'Successfully Login',
             colorText: Colors.green,
             duration: const Duration(seconds: 2),
+            snackPosition: SnackPosition.BOTTOM,
           );
           completer.complete("Succesfully Signed In");
         } else if (email == '' || password == '') {
@@ -44,6 +45,7 @@ class AuthController extends GetxController {
         "Error ",
         toSentenceCase(e.toString()),
         colorText: Colors.red,
+        snackPosition: SnackPosition.BOTTOM,
       );
       rethrow;
     } finally {
